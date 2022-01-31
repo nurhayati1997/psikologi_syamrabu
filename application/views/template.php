@@ -11,7 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
   <meta name="author" content="Creative Tim">
-  <title>POLI SYAMRABU</title>
+  <title>PSIKOLOGI SYAMRABU</title>
   <!-- Extra details for Live View on GitHub Pages -->
   <!-- Canonical SEO -->
   <link rel="canonical" href="https://www.creative-tim.com/product/argon-dashboard-pro" />
@@ -117,7 +117,7 @@
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="<?= site_url('operator_gcu') ?>">
+              <a class="nav-link" href="<?= site_url('operator_psikologi') ?>">
                 <i class="ni ni-circle-08  text-primary"></i>
                 <span class="nav-link-text">Data Permintaan</span>
               </a>
