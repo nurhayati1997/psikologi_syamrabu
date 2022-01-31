@@ -137,7 +137,7 @@ class login_psikologi extends CI_Controller
 		$this->session->unset_userdata('id_user');
 		$this->session->unset_userdata('nama');
 		$this->session->unset_userdata('rule');
-		redirect('login');
+		redirect('login_psikologi');
 	}
 
 	function enkripsi($data)

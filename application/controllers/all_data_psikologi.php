@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class all_data extends CI_Controller
+class all_data_psikologi extends CI_Controller
 {
 
 	function __construct()
@@ -19,7 +19,7 @@ class all_data extends CI_Controller
 		// $this->load->view('dashboard_v');
 		//$this->load->view('umum_v', $data);
 		// $data["total_today"] = $this->db_model->get("syarefa")->num_rows();
-		$this->template->load('template', 'all_data_v');
+		$this->template->load('template', 'all_data_psikologi_v');
 	}	
 	
 	public function tampil()
@@ -39,19 +39,19 @@ class all_data extends CI_Controller
 	// 	// echo json_encode($this->db_model->get_where("syarefa", ["status" => $nowDate])->result());
 	// }
 
-	public function tambah_data()
-	{
-		$data = [
-			"no_antrian" => $this->input->post("no_antrian", TRUE),
-			"no_rm" => $this->input->post("no_rm", TRUE),
-			"nama" => $this->input->post("nama", TRUE),
-			"poli" => $this->input->post("poli", TRUE),
-			"jenis_pasien" => $this->input->post("jenis_pasien", TRUE),
-			"status"=>$this->input->post("status", TRUE)
-		];
-		$this->db_model->insert('syarefa', $data);
-		echo json_encode($data);
-	}
+	// public function tambah_data()
+	// {
+	// 	$data = [
+	// 		"no_antrian" => $this->input->post("no_antrian", TRUE),
+	// 		"no_rm" => $this->input->post("no_rm", TRUE),
+	// 		"nama" => $this->input->post("nama", TRUE),
+	// 		"poli" => $this->input->post("poli", TRUE),
+	// 		"jenis_pasien" => $this->input->post("jenis_pasien", TRUE),
+	// 		"status"=>$this->input->post("status", TRUE)
+	// 	];
+	// 	$this->db_model->insert('syarefa', $data);
+	// 	echo json_encode($data);
+	// }
 
 	public function dataById()
 	{

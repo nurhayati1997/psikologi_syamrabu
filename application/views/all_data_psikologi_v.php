@@ -6,7 +6,7 @@
       <div class="header-body">
         <div class="row align-items-center py-4">
           <div class="col-lg-6 col-7">
-            <h6 class="h2 text-white d-inline-block mb-0">GCU SYAMRABU</h6>
+            <h6 class="h2 text-white d-inline-block mb-0">PSIKOLOGI SYAMRABU</h6>
             <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
               <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
@@ -144,25 +144,24 @@
 
   function tampilkan(){
     $("#tempatTabel").html('<i class="fas fa-spinner fa-pulse"></i> Memuat...')
-    var baris = '<table class="table table-flush" id="tabelUser"><thead class="thead-light"><tr><th>Action</th><th>NO</th><th>Tanggal</th><th>Nama</th><th>Keperluan</th><th>Pendengaran</th><th>Warna</th></tr></thead><tbody>'
+    var baris = '<table class="table table-flush" id="tabelUser"><thead class="thead-light"><tr><th>Action</th><th>NO</th><th>Tanggal</th><th>Nama</th><th>Keperluan</th><th>Pendidikan Terakhir</th></tr></thead><tbody>'
       $.ajax({
         type:'POST',
-        url: '<?= base_url() ?>all_data/tampil',
+        url: '<?= base_url() ?>all_data_psikologi/tampil',
         dataType :'json',
         success: function(data){
           // console.log(data);
           for (let i = 0; i < data.length; i++) {
             baris += '<tr>'
             baris += '<td><div style="cursor:pointer;" title="hapus?" class="badge badge-danger" id="hapus' + data[i].id + '" onClick="tryHapus(' + data[i].id+ ')"><i class="fa fa-times"></i></div>'
-            baris += ' <div style="cursor:pointer;" title="edit?" class="badge badge-info" id="edit' + data[i].id + '" onClick="tryEdit(' + data[i].id+ ')"><i class="fa fa-edit"></i></div>'
+            // baris += ' <div style="cursor:pointer;" title="edit?" class="badge badge-info" id="edit' + data[i].id + '" onClick="tryEdit(' + data[i].id+ ')"><i class="fa fa-edit"></i></div>'
             baris += ' <div style="cursor:pointer;" title="Cetak?" class="badge badge-success" id="cetak' + data[i].id + '" onClick="tryCetak(' + data[i].id+ ')"><i class="fa fa-print"></i></div>'
             // baris += ' <div style="cursor:pointer;" title="Cetak?" class="badge badge-success" id="cetak' + data[i].id + '" onClick="send_form()"><i class="fa fa-print"></i></div>'
             baris += '<td>' + (i + 1) + '</td>'
             baris += '<td>' + data[i].tgl_daftar_gcu + '</td>'
             baris += '<td>' + data[i].nama + '</td>'
             baris += '<td>' + data[i].keperluan_pasien_gcu + '</td>'
-            baris += '<td>' + data[i].pendengaran_pasien_gcu + '</td>'
-            baris += '<td>' + data[i].warna_pasien_gcu + '</td>'
+            baris += '<td>' + data[i].pendidikan_pasien_gcu + '</td>'
             baris += '</td></tr>'
           }
           baris += '</tbody></table>'
@@ -178,7 +177,7 @@
 
   function tryCetak(id) {
     window.open(
-       "<?= site_url(); ?>operator_gcu/dataById/" + id);
+       "<?= site_url(); ?>operator_psikologi/dataById/" + id);
   }
 
 

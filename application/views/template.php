@@ -124,7 +124,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="<?= site_url('all_data') ?>">
+                <a class="nav-link" href="<?= site_url('all_data_psikologi') ?>">
                   <i class="ni ni-tv-2 text-pink"></i>
                   <span class="nav-link-text">All Data</span>
                 </a>
@@ -173,7 +173,7 @@
                   <span>Ubah Password</span>
                 </a> -->
                 <div class="dropdown-divider"></div>
-                <a href="<?= base_url("login/logout") ?>" class="dropdown-item">
+                <a href="<?= base_url("login_psikologi/logout") ?>" class="dropdown-item">
                   <i class="ni ni-user-run"></i>
                   <span>Logout</span>
                 </a>

@@ -183,25 +183,24 @@
 
   function tampilkan(){
     $("#tempatTabel").html('<i class="fas fa-spinner fa-pulse"></i> Memuat...')
-    var baris = '<table class="table table-flush" id="tabelUser"><thead class="thead-light"><tr><th>Action</th><th>NO</th><th>Tanggal</th><th>Nama</th><th>Keperluan</th><th>Pendengaran</th><th>Warna</th></tr></thead><tbody>'
+    var baris = '<table class="table table-flush" id="tabelUser"><thead class="thead-light"><tr><th>Action</th><th>NO</th><th>Tanggal</th><th>Nama</th><th>Keperluan</th><th>Pendidikan Terakhir</th></tr></thead><tbody>'
       $.ajax({
         type:'POST',
-        url: '<?= base_url() ?>operator_gcu/tampil',
+        url: '<?= base_url() ?>operator_psikologi/tampil',
         dataType :'json',
         success: function(data){
           // console.log(data);
           for (let i = 0; i < data.length; i++) {
             baris += '<tr>'
             baris += '<td><div style="cursor:pointer;" title="hapus?" class="badge badge-danger" id="hapus' + data[i].id + '" onClick="tryHapus(' + data[i].id+ ')"><i class="fa fa-times"></i></div>'
-            baris += ' <div style="cursor:pointer;" title="edit?" class="badge badge-info" id="edit' + data[i].id + '" onClick="tryEdit(' + data[i].id+ ')"><i class="fa fa-edit"></i></div>'
+            // baris += ' <div style="cursor:pointer;" title="edit?" class="badge badge-info" id="edit' + data[i].id + '" onClick="tryEdit(' + data[i].id+ ')"><i class="fa fa-edit"></i></div>'
             baris += ' <div style="cursor:pointer;" title="Cetak?" class="badge badge-success" id="cetak' + data[i].id + '" onClick="tryCetak(' + data[i].id+ ')"><i class="fa fa-print"></i></div>'
             // baris += ' <div style="cursor:pointer;" title="Cetak?" class="badge badge-success" id="cetak' + data[i].id + '" onClick="send_form()"><i class="fa fa-print"></i></div>'
             baris += '<td>' + (i + 1) + '</td>'
             baris += '<td>' + data[i].tgl_daftar_gcu + '</td>'
             baris += '<td>' + data[i].nama + '</td>'
             baris += '<td>' + data[i].keperluan_pasien_gcu + '</td>'
-            baris += '<td>' + data[i].pendengaran_pasien_gcu + '</td>'
-            baris += '<td>' + data[i].warna_pasien_gcu + '</td>'
+            baris += '<td>' + data[i].pendidikan_pasien_gcu + '</td>'
             baris += '</td></tr>'
           }
           baris += '</tbody></table>'
@@ -217,67 +216,15 @@
 
   function tryCetak(id) {
     window.open(
-       "<?= site_url(); ?>operator_gcu/dataById/" + id);
+       "<?= site_url(); ?>operator_psikologi/dataById/" + id);
   }
 
 
-
-  function tryEdit(id) {
-    $("#tombolEdit" + id).html('<i class="fas fa-spinner fa-pulse"></i>')
-    $("#idUser").val(id)
-    $.ajax({
-      url: '<?= base_url() ?>operator_gcu/edit_id',
-      method: 'post',
-      data: "target=gcu_syamrabu&id=" + id,
-      dataType: 'json',
-      success: function(data) {
-        $("#modalEdit").modal('show')
-        $("#keperluan_pasien_gcu").val(data.keperluan_pasien_gcu)
-        $("#pendengaran_pasien_gcu").val(data.pendengaran_pasien_gcu)
-        $("#warna_pasien_gcu").val(data.warna_pasien_gcu)
-        console.log(data)
-        $("#edit" + id).html('<i class="fa fa-edit"></i>')
-      }
-    });
-  }
-
-  function edit() {
-    $("#tombolEdit").html('<i class="fas fa-spinner fa-pulse"></i> Memproses..')
-    var keperluan_pasien_gcu = $("#keperluan_pasien_gcu").val()
-    var pendengaran_pasien_gcu = $("#pendengaran_pasien_gcu").val()
-    var warna_pasien_gcu = $("#warna_pasien_gcu").val()
-    var id = $("#idUser").val()
-    $.ajax({
-      url: '<?= base_url() ?>operator_gcu/edit',
-      method: 'post',
-      data: {
-        id: id,
-        keperluan_pasien_gcu: keperluan_pasien_gcu,
-        pendengaran_pasien_gcu: pendengaran_pasien_gcu,
-        warna_pasien_gcu: warna_pasien_gcu
-      },
-      dataType: 'json',
-      success: function(data) {
-        if (data == "") {
-          $("#idUser").val("")
-          $("#keperluan_pasien_gcu").val("")
-          $("#pendengaran_pasien_gcu").val("")
-          $("#warna_pasien_gcu").val("")
-          $('#pesanErrorTambah').html("")
-        } else {
-          $('#pesanErrorEdit').html(data)
-        }
-        $("#modalEdit").modal('hide');
-        tampilkan();
-        $("#tombolEdit").html('Edit')
-      }
-    });
-  }
 
   function tryHapus(id) {
     $("#hapus" + id).html('<i class="fas fa-spinner fa-pulse"></i>')
     $.ajax({
-      url: 'operator_gcu/edit_id',
+      url: 'operator_psikologi/edit_id',
       method: 'post',
       data: "target=gcu_syamrabu&id=" + id,
       dataType: 'json',
@@ -295,7 +242,7 @@
     $("#hapus").html('<i class="fas fa-spinner fa-pulse"></i> Memproses..')
     var id = $("#id_hapus").val()
     $.ajax({
-      url: 'operator_gcu/hapus',
+      url: 'operator_psikologi/hapus',
       method: 'post',
       data: "target=gcu_syamrabu&id=" + id,
       dataType: 'json',

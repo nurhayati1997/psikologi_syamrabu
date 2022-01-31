@@ -73,7 +73,7 @@ class operator_psikologi extends CI_Controller
 		// $data["kecamatan_pasien_gcu"] = $id_pasien['kecamatan_pasien_gcu'];
 		// $data["kabupaten_pasien_gcu"] = $id_pasien['kabupaten_pasien_gcu'];
 		// $data["alamat_pasien_gcu"] = $id_pasien['alamat_pasien_gcu'];
-		$this->load->view('form', $data);
+		$this->load->view('form_psikologi', $data);
 		// echo json_encode($this->db_model->get_where($this->input->post("target"), ["id" => $this->input->post('id', TRUE)])->row_array());
 	}
 	function edit_id()
