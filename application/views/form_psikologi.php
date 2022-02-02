@@ -205,7 +205,7 @@
 	  	<table width="625">
 			<tr>
 				<td width="330"><br><br><br><br></td>
-				<td class="text" align="center">Bangkalan, <?= $pasien['tgl_daftar_gcu'] ?><br>Pemeriksa<br><br><br><br><br><b><u>dr.Indriana Lestariningtias, Sp.KJ</u><br>NIP.19770621201001201</b></td>
+				<td class="text" align="center">Bangkalan, <?= $pasien['tgl_daftar_gcu'] ?><br>Pemeriksa<br><br><br><br><br><b><u>dr.Indriana Lestariningtias, Sp.KJ</u><br>NIP.197706212010012015</b></td>
 			</tr>
 	     </table>
 		<br>
