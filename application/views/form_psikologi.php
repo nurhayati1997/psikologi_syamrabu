@@ -116,27 +116,26 @@
 		<table width="625">
 			<tr>
 		       <td>
-			    	<font size="2">Atas Permintaan tertulis dari Pemerintah Provinsi Jawa Timur Dinas Pendidikan Cabang di Pendidikan Wilayah Bangkalan (Kabupaten Bangkalan)<br></font>
+			    	<font size="2">Atas Permintaan tertulis dari &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?= $pasien['atas_permintaan_ps'] ?><br></font>
             	</td>
 		    </tr>
 		</table>
 		<table width="625">
 			<tr class="text2">
 				<td>Nama </td>
-				<td width="541">: Dr. Mustakim, S.S, M.Si</td>
+				<td width="541">: <?= $pasien['nama_atas_permintaan_ps'] ?></td>
 			</tr>
 			<tr>
 				<td width="200">Jabatan </td>
-				<td width="525">: Kepala Cabang Dinas Pendidikan Wilayah Bangkalan</td>
+				<td width="525">: <?= $pasien['jabatan_atas_permintaan_ps'] ?></td>
 			</tr>
 			<tr>
 				<td width="200">No Surat</td>
-				<td width="525">: 800/10/101.6.21/2022</td>
+				<td width="525">: <?= $pasien['no_surat_atas_permintaan_ps'] ?></td>
 			</tr>
 			<tr class="text2">
 				<td>Perihal Permintaan </td>
-				<td width="541">: Permohonan Fasilitas Tes Kesehatan bagi CPNS Formasi Tahun 2022 <br>
-					Lingkungan Cabang Dinas Pendidikan Wilayah Bangkalan
+				<td width="541">: <?= $pasien['perihal_atas_permintaan_ps'] ?>
 				</td>
 			</tr>
 		</table>

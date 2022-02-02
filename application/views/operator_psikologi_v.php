@@ -64,32 +64,42 @@
                               </div>
                             </div>
                             <div class="card-body px-lg-5 py-lg-5">
-                              <form role="form">
+                            <form role="form">
                                 <div class="form-group mb-3">
                                   <input id="idUser" type="hidden">
-                                  <!-- <label class="form-control-label" for="exampleFormControlSelect1">Pendengaran</label> -->
-                                  <select class="form-control" id="keperluan_pasien_gcu">
-                                    <option value="">Kepentingan</option>
-                                    <option value="PEMBERKASAN CPNS">Pemberkasan CPNS</option>
-                                    <option value="PEMBERKASAN P3K">Pemberkasan P3K</option>
-                                    <option value="LAIN - LAIN">Lain-Lain</option>
-                                  </select>
+                                  <div class="form-group mb-3">
+                                    <label class="form-control-label" for="atas_permintaan_ps">Atas Permintaan tertulis dari</label>
+                                    <textarea class="form-control" id="atas_permintaan_ps" rows="3"></textarea>
+                                  </div>
                                 </div>
                                 <div class="form-group mb-3">
-                                  <!-- <input id="idUser" type="hidden"> -->
-                                  <!-- <label class="form-control-label" for="exampleFormControlSelect1">Pendengaran</label> -->
-                                  <select class="form-control" id="pendengaran_pasien_gcu">
-                                    <option value="">Pendengaran</option>
-                                    <option value="Baik">Baik</option>
-                                    <option value="Cukup Baik">Cukup Baik</option>
-                                  </select>
+                                    <div class="input-group input-group-merge input-group-alternative">
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-badge"></i></span>
+                                      </div>
+                                      <input class="form-control" name="nama_atas_permintaan_ps" id="nama_atas_permintaan_ps" placeholder="Nama Pejabat" type="text">
+                                    </div>
                                 </div>
                                   <div class="form-group mb-3">
                                     <div class="input-group input-group-merge input-group-alternative">
                                       <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-badge"></i></span>
                                       </div>
-                                      <input class="form-control" name="warna_pasien_gcu" id="warna_pasien_gcu" placeholder="Warna" type="text">
+                                      <input class="form-control" name="jabatan_atas_permintaan_ps" id="jabatan_atas_permintaan_ps" placeholder="Jabatan" type="text">
+                                    </div>
+                                  </div>
+                                <div class="form-group mb-3">
+                                    <div class="input-group input-group-merge input-group-alternative">
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-badge"></i></span>
+                                      </div>
+                                      <input class="form-control" name="no_surat_atas_permintaan_ps" id="no_surat_atas_permintaan_ps" placeholder="No Surat Permintaan" type="text">
+                                    </div>
+                                </div>
+                                  <div class="col-12">
+                                    <div class="form-group mb-3">
+                                      <label class="form-control-label" for="perihal_atas_permintaan_ps">Perihal Permintaan</label>
+                                      <textarea class="form-control" id="perihal_atas_permintaan_ps" rows="3"></textarea>
                                     </div>
                                   </div>
                                 <div class="badge badge-danger" id="pesanErrorEdit"></div>
@@ -193,7 +203,7 @@
           for (let i = 0; i < data.length; i++) {
             baris += '<tr>'
             baris += '<td><div style="cursor:pointer;" title="hapus?" class="badge badge-danger" id="hapus' + data[i].id + '" onClick="tryHapus(' + data[i].id+ ')"><i class="fa fa-times"></i></div>'
-            // baris += ' <div style="cursor:pointer;" title="edit?" class="badge badge-info" id="edit' + data[i].id + '" onClick="tryEdit(' + data[i].id+ ')"><i class="fa fa-edit"></i></div>'
+            baris += ' <div style="cursor:pointer;" title="edit?" class="badge badge-info" id="edit' + data[i].id + '" onClick="tryEdit(' + data[i].id+ ')"><i class="fa fa-edit"></i></div>'
             baris += ' <div style="cursor:pointer;" title="Cetak?" class="badge badge-success" id="cetak' + data[i].id + '" onClick="tryCetak(' + data[i].id+ ')"><i class="fa fa-print"></i></div>'
             // baris += ' <div style="cursor:pointer;" title="Cetak?" class="badge badge-success" id="cetak' + data[i].id + '" onClick="send_form()"><i class="fa fa-print"></i></div>'
             baris += '<td>' + (i + 1) + '</td>'
@@ -210,6 +220,65 @@
           });
         }
       });
+  }
+
+  function tryEdit(id) {
+    $("#tombolEdit" + id).html('<i class="fas fa-spinner fa-pulse"></i>')
+    $("#idUser").val(id)
+    $.ajax({
+      url: '<?= base_url() ?>operator_psikologi/edit_id',
+      method: 'post',
+      data: "target=gcu_syamrabu&id=" + id,
+      dataType: 'json',
+      success: function(data) {
+        $("#modalEdit").modal('show')
+        $("#atas_permintaan_ps").val(data.atas_permintaan_ps)
+        $("#nama_atas_permintaan_ps").val(data.nama_atas_permintaan_ps)
+        $("#jabatan_atas_permintaan_ps").val(data.jabatan_atas_permintaan_ps)
+        $("#perihal_atas_permintaan_ps").val(data.perihal_atas_permintaan_ps)
+        $("#no_surat_atas_permintaan_ps").val(data.no_surat_atas_permintaan_ps)
+        console.log(data)
+        $("#edit" + id).html('<i class="fa fa-edit"></i>')
+      }
+    });
+  }
+
+  function edit() {
+    $("#tombolEdit").html('<i class="fas fa-spinner fa-pulse"></i> Memproses..')
+    var atas_permintaan_ps = $("#atas_permintaan_ps").val()
+    var nama_atas_permintaan_ps = $("#nama_atas_permintaan_ps").val()
+    var jabatan_atas_permintaan_ps = $("#jabatan_atas_permintaan_ps").val()
+    var no_surat_atas_permintaan_ps = $("#no_surat_atas_permintaan_ps").val()
+    var perihal_atas_permintaan_ps = $("#perihal_atas_permintaan_ps").val()
+    var id = $("#idUser").val()
+    $.ajax({
+      url: '<?= base_url() ?>operator_psikologi/edit',
+      method: 'post',
+      data: {
+        id: id,
+        atas_permintaan_ps: atas_permintaan_ps,
+        nama_atas_permintaan_ps: nama_atas_permintaan_ps,
+        jabatan_atas_permintaan_ps: jabatan_atas_permintaan_ps,
+        no_surat_atas_permintaan_ps: no_surat_atas_permintaan_ps,
+        perihal_atas_permintaan_ps: perihal_atas_permintaan_ps
+      },
+      dataType: 'json',
+      success: function(data) {
+        if (data == "") {
+          $("#idUser").val("")
+          $("#atas_permintaan_ps").val("")
+          $("#nama_atas_permintaan_ps").val("")
+          $("#jabatan_atas_permintaan_ps").val("")
+          $("#no_surat_atas_permintaan_ps").val("")
+          $("#perihal_atas_permintaan_ps").val("")
+        } else {
+          $('#pesanErrorEdit').html(data)
+        }
+        $("#modalEdit").modal('hide');
+        tampilkan();
+        $("#tombolEdit").html('Edit')
+      }
+    });
   }
 
 

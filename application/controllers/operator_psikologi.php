@@ -94,9 +94,11 @@ class operator_psikologi extends CI_Controller
 	public function edit()
 	{
 		$data = [
-			"keperluan_pasien_gcu" => $this->input->post("keperluan_pasien_gcu", TRUE),
-			"pendengaran_pasien_gcu" => $this->input->post("pendengaran_pasien_gcu", TRUE),
-			"warna_pasien_gcu" => $this->input->post("warna_pasien_gcu", TRUE)
+			"atas_permintaan_ps" => $this->input->post("atas_permintaan_ps", TRUE),
+			"nama_atas_permintaan_ps" => $this->input->post("nama_atas_permintaan_ps", TRUE),
+			"jabatan_atas_permintaan_ps" => $this->input->post("jabatan_atas_permintaan_ps", TRUE),
+			"no_surat_atas_permintaan_ps" => $this->input->post("no_surat_atas_permintaan_ps", TRUE),
+			"perihal_atas_permintaan_ps" => $this->input->post("perihal_atas_permintaan_ps", TRUE)
 		];
 		$this->db_model->update('gcu_syamrabu', $data, ["id" => $this->input->post("id")]);
 		echo json_encode("");
