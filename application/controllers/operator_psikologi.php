@@ -58,7 +58,8 @@ class operator_psikologi extends CI_Controller
 	public function dataById($id)
 	{
 
-		$query = "select * from gcu_syamrabu where id=".($id);		// $id_pasien = $this->db_model->get_where("gcu_syamrabu", ["id" => (int) $id] );
+		$query = "select * from v_gcu_syamrabu where id=".($id);		// $id_pasien = $this->db_model->get_where("gcu_syamrabu", ["id" => (int) $id] );
+		// $query = "select * from gcu_syamrabu where id=".($id);		// $id_pasien = $this->db_model->get_where("gcu_syamrabu", ["id" => (int) $id] );
 		
 		$data ['pasien'] = $this->db_model->get_query($query)->row_array();
 		// $pasien = $this->db_model->get_query($query)->row_array();
@@ -87,7 +88,7 @@ class operator_psikologi extends CI_Controller
 		// $data["admin"] = $this->db_model->get_where("tbl_user", ["rule" => 2])->row_array()["nama"];
 		// $data ["nama"]= $this->session->userdata("nama");
 		//$data_antrian = $this->db_model->ambil_data('gcu_syamrabu')->result();
-		$this->load->view('form');
+		// $this->load->view('form');
 	}
 
 

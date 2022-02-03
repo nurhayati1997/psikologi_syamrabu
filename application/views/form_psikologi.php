@@ -18,14 +18,17 @@
 		}
 		table tr .text2 {
 			text-align: right;
-			font-size: 13px;
+			font-size: 15px;
+			font-family: arial;
 		}
 		table tr .text {
 			text-align: center;
-			font-size: 13px;
+			font-size: 15px;
+			font-family: arial;
 		}
 		table tr td {
-			font-size: 13px;
+			font-size: 15px;
+			font-family: arial;
 		}
 
 	</style>
@@ -37,17 +40,17 @@
 	<center>
 		<table>
 			<tr>
-				<td><img src="<?= base_url() ?>assets_admin/Bangkalan.png" width="90" height="90"></td>
+				<td><img src="<?= base_url() ?>assets_admin/Bangkalan.png" width="150" height="90"></td>
 				<td>
 				<center>
 					<font size="4"></font><br>
-					<font size="4">PEMERINTAH KABUPATEN BANGKALAN</font><br>
-					<font size="4">DINAS KESEHATAN</font><br>
-					<font size="5"><b>UOBK RSUD SYARIFAH AMBAMI RATO EBU</b></font><br>
-					<font size="2">Jl. Pemuda Kaffa No.9,Telp.(031) 3091111 Fax.(031) 3094108 kode pos 69112</font><br>
-					<font size="2"><i>Website www.rsabangkalan.com Email 1: eres.bangkalan@yahoo.co.id</i></font><br>
-					<font size="2"><i>Email 2: rsudsyamrabu@bangkalankab.go.id</i></font><br>
-					<font size="2">BANGKALAN</font>
+					<font size="4" face="Arial">PEMERINTAH KABUPATEN BANGKALAN</font><br>
+					<font size="4" face="Arial">DINAS KESEHATAN</font><br>
+					<font size="5" face="Arial"><b>UOBK RSUD SYARIFAH AMBAMI RATO EBU</b></font><br>
+					<font size="2" face="Arial">Jl. Pemuda Kaffa No.9,Telp.(031) 3091111 Fax.(031) 3094108 kode pos 69112</font><br>
+					<font size="2" face="Arial"><i>Website rsud.bangkalankab.go.id Email 1: eres.bangkalan@yahoo.co.id</i></font><br>
+					<font size="2" face="Arial"><i>Email 2: rsudsyamrabu@bangkalankab.go.id</i></font><br>
+					<font size="2" face="Arial">BANGKALAN</font>
 				</center>
 				</td>
 			</tr>
@@ -59,8 +62,8 @@
           <td>
             <center>
               <!-- <font size="2">SURAT KETERANGAN DOKTER</font> <br> -->
-              <font size="3"><u><b>SURAT KETERANGAN PEMERIKSAAN SEHAT JIWA</u></b></font><br>
-              <font size="2">NOMOR : 445/590/433.102.1/I/2022</font> 
+              <font size="4" face="Arial"><u><b>SURAT KETERANGAN PEMERIKSAAN SEHAT JIWA</u></b></font><br>
+              <font size="3" face="Arial">NOMOR : 445/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/433.102.1/I/2022</font> 
             </center>
           </td>
         </tr>
@@ -91,32 +94,32 @@
 		<table width="625">
 			<tr>
 		       <td>
-			    	<font size="2">Yang Bertanda Tangan di bawah ini, menerangkan bahwa<br></font>
+			    	<font size="3" face="Arial">Yang Bertanda Tangan di bawah ini, menerangkan bahwa<br></font>
             	</td>
 		    </tr>
 		</table>
 		<table width="625">
 			<tr class="text2">
 				<td>Nama </td>
-				<td width="541">: dr. indriana Lestariningtias, Sp.KJ</td>
+				<td width="541">&nbsp;&nbsp;: dr. indriana Lestariningtias, Sp.KJ</td>
 			</tr>
 			<tr>
 				<td width="200">No SIP </td>
-				<td width="525">: 503/076/433.114/SIPD/2021/DS</td>
+				<td width="525">&nbsp;&nbsp;: 503/076/433.114/SIPD/2021/DS</td>
 			</tr>
 			<tr>
 				<td width="200">Jabatan</td>
-				<td width="525">: Dokter Spesialis Kedokteran Jiwa</td>
+				<td width="525">&nbsp;&nbsp;: Dokter Spesialis Kedokteran Jiwa</td>
 			</tr>
 			<tr class="text2">
 				<td>Instansi </td>
-				<td width="541">: UOBK RSUD Syarifah Ambami Rato Ebu Bangkalan</td>
+				<td width="541">&nbsp;&nbsp;: UOBK RSUD Syarifah Ambami Rato Ebu Bangkalan</td>
 			</tr>
 		</table>
 		<table width="625">
 			<tr>
 		       <td>
-			    	<font size="2">Atas Permintaan tertulis dari &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <?= $pasien['atas_permintaan_ps'] ?><br></font>
+			    	<font size="3" face="Arial">Atas Permintaan tertulis dari : <?= $pasien['atas_permintaan_ps'] ?><br></font>
             	</td>
 		    </tr>
 		</table>
@@ -143,7 +146,7 @@
 		<table width="625">
 			<tr>
 		       <td>
-			    	<font size="2">Telah Melakukan Pemeriksaan psikiatri pada tanggal <?= $pasien['tgl_daftar_gcu'] ?> terhadap :<br></font>
+			    	<font size="3" face="Arial">Telah Melakukan Pemeriksaan psikiatri pada tanggal <?= $pasien['tgl_daftar_gcu'] ?> terhadap :<br></font>
             	</td>
 		    </tr>
 		</table>
@@ -179,10 +182,10 @@
 		<table width="625">
 			<tr>
 		       <td>
-			        <font size="2">Dengan hasil Pemeriksaan kesehatan jiwa pada saat ini :<br></font>
+			        <font size="3" face="Arial">Dengan hasil Pemeriksaan kesehatan jiwa pada saat ini :<br></font>
               <center>
                 <br>
-					<font size="2"> <b>Tidak ditemukan tanda/gejala Gangguan Jiwa yang bermakna yang dapat mengganggu aktivitas kehidupan sehari-hari</b></font><br>
+					<font size="3" face="Arial"> <b>Tidak / Ditemukan tanda/gejala Gangguan Jiwa yang bermakna yang dapat mengganggu aktivitas kehidupan sehari-hari</b></font><br>
               <center>
             	</td>
 		    </tr>
@@ -191,7 +194,7 @@
 		<table width="625">
 			<tr>
 		       <td>
-			    	<font size="2">Demikian Surat Keterangan ini dibuat sebenarnya untuk Persyaratan Pengangkatan menjadi PNS Pemerintah Provinsi Jawa Timur</font>
+			    	<font size="3" face="Arial">Demikian Surat Keterangan ini dibuat sebenarnya untuk <?= $pasien['keperluan_pasien_gcu'] ?></font>
             	</td>
 		    </tr>
 		</table>
@@ -199,14 +202,11 @@
 		</table>
 		<table>
       <br>
-      <br>
-      <br>
-      <br>
 	  	<table width="625">
 			<tr>
 				<td width="330"><br><br><br><br></td>
 				<td class="text" align="center">Bangkalan, <?= $pasien['tgl_daftar_gcu'] ?><br>Pemeriksa<br><br><br><br><br><b><u>dr.Indriana Lestariningtias, Sp.KJ</u><br>NIP.197706212010012015</b></td>
-			</tr>
+				
 	     </table>
 		<br>
 		<table width="625">

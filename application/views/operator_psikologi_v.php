@@ -189,10 +189,14 @@
   //   //  add_list();
   //   tampilkan();
   // }); 
+  // var tgl_daftar_gcu = new Date;
+  // var hariIni = (tgl_daftar_gcu.getMonth() + 1) + '/' + (tgl_daftar_gcu.getDate()) + '/' + tgl_daftar_gcu.getFullYear();
+  // $("#tgl_daftar_gcu").val(hariIni)
   tampilkan();
 
   function tampilkan(){
     $("#tempatTabel").html('<i class="fas fa-spinner fa-pulse"></i> Memuat...')
+    // var tgl_daftar_gcu = $("#tgl_daftar_gcu").val()
     var baris = '<table class="table table-flush" id="tabelUser"><thead class="thead-light"><tr><th>Action</th><th>NO</th><th>Tanggal</th><th>Nama</th><th>Keperluan</th><th>Pendidikan Terakhir</th></tr></thead><tbody>'
       $.ajax({
         type:'POST',
@@ -323,5 +327,13 @@
         $("#hapus").html('Hapus')
       }
     });
+  }
+
+  function formatTanggal(tanggal) {
+    var now = new Date(tanggal);
+    var day = ("0" + now.getDate()).slice(-2);
+    var month = ("0" + (now.getMonth() + 1)).slice(-2);
+    var today = now.getFullYear() + "%2f" + (month) + "%2f" + (day);
+    return today
   }
 </script>
