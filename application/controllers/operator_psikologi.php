@@ -8,7 +8,7 @@ class operator_psikologi extends CI_Controller
 	{
 		parent::__construct();
 		if (!$this->session->userdata("id_user")) {
-			redirect("login");
+			redirect("login_psikologi");
 		}
 		$this->load->model('db_model');
 		$this->load->helper('url');
@@ -58,9 +58,7 @@ class operator_psikologi extends CI_Controller
 	public function dataById($id)
 	{
 
-		$query = "select * from v_gcu_syamrabu where id=".($id);		// $id_pasien = $this->db_model->get_where("gcu_syamrabu", ["id" => (int) $id] );
-		// $query = "select * from gcu_syamrabu where id=".($id);		// $id_pasien = $this->db_model->get_where("gcu_syamrabu", ["id" => (int) $id] );
-		
+		$query = "select * from v_gcu_syamrabu where id=".($id);		
 		$data ['pasien'] = $this->db_model->get_query($query)->row_array();
 		// $pasien = $this->db_model->get_query($query)->row_array();
 		// var_dump($pasien ['nama']) ;
