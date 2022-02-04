@@ -63,7 +63,7 @@
             <center>
               <!-- <font size="2">SURAT KETERANGAN DOKTER</font> <br> -->
               <font size="4" face="Arial"><u><b>SURAT KETERANGAN PEMERIKSAAN SEHAT JIWA</u></b></font><br>
-              <font size="3" face="Arial">NOMOR : 445/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/433.102.1/I/2022</font> 
+              <font size="3" face="Arial">NOMOR : 445/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/433.102.1/II/2022</font> 
             </center>
           </td>
         </tr>
